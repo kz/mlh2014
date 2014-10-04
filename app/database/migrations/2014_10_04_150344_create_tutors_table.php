@@ -21,6 +21,7 @@ class CreateTutorsTable extends Migration {
             $table->decimal('rating', 1, 1)->default(0);
             $table->decimal('hourly_rate', 3, 2);
             $table->text('experience')->nullable();
+            $table->integer('matched_user_id')->unsigned()->nullable();
             $table->timestamps();
         });
 	}
