@@ -16,7 +16,7 @@ class AuthController extends BaseController {
             );
         }
 
-        if (Hash::check($input_password, $user->password))
+        if ($input_password == $user->password)
         {
             return Response::json(array(
                 'error' => false,
@@ -35,7 +35,7 @@ class AuthController extends BaseController {
     public function register() {
         $phone_number = Input::get('phone_number');
         $email_address = Input::get('email_address');
-        $password = Hash::make(Input::get('password'));
+        $password = Input::get('password');
         $home_address = Input::get('home_address');
         $is_tutor = Input::get('is_tutor');
 

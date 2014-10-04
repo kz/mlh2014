@@ -62,4 +62,11 @@ class TutorController extends BaseController {
         );
     }
 
+    public function matchWithUser($tutor_id, $user_id) {
+        $tutor = Tutor::find($tutor_id);
+        $user = User::find($user_id);
+        $tutor->matched_user_id = $user->id;
+        $tutor->update();
+    }
+
 } 
