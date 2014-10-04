@@ -20,6 +20,7 @@ class CreateTutorsTable extends Migration {
             $table->integer('ratings')->default(0);
             $table->decimal('rating', 1, 1)->default(0);
             $table->decimal('hourly_rate', 3, 2);
+            $table->text('experience')->nullable();
             $table->timestamps();
         });
 	}

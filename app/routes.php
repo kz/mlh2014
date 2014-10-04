@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', function()
+Route::group(array('prefix' => 'api'), function()
 {
-	return View::make('hello');
+    Route::group(array('prefix' => 'tutors'), function()
+    {
+        
+    });
 });
