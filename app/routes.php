@@ -13,8 +13,7 @@
 
 Route::group(array('prefix' => 'api'), function()
 {
-    Route::group(array('prefix' => 'tutors'), function()
-    {
-        
-    });
+    Route::get('tutors/subject/{subject}/user/{user_id}', 'TutorController@filterBySubject');
+    Route::get('tutor/{tutor_id}', 'TutorController@getTutor');
+
 });
