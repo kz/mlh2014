@@ -10,6 +10,7 @@ class UserTableSeeder extends Seeder {
 	public function run()
 	{
         $faker = Faker\Factory::create();
+        $subjects = array('Chemistry', 'Physics', 'Computer Science', 'Languages', 'Mathematics', 'Biology', 'Art', 'History', 'English', 'Geography');
 
         for ($i = 0; $i < 10; $i++) {
             $user = User::create(array(
@@ -32,10 +33,10 @@ class UserTableSeeder extends Seeder {
 
             $tutor = Tutor::create(array(
                 'user_id' => $user->id,
-                'degree' => array_rand(array('Chemistry', 'Physics', 'Computer Science', 'Languages', 'Mathematics', 'Biology', 'Art', 'History', 'English', 'Geography')),
+                'degree' => $subjects[array_rand($subjects)],
                 'ratings' => $faker->numberBetween($min = 1, $max = 5),
-                'rating' => $faker->numberBetween($min = 1, $max = 5) . '.0',
-                'hourly_rate' => $faker->numberBetween($min = 10, $max = 25) . '.00'
+                'rating' => $faker->numberBetween($min = 1, $max = 5),
+                'hourly_rate' => $faker->numberBetween($min = 10, $max = 25)
             ));
         }
 

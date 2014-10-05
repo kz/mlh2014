@@ -18,8 +18,8 @@ class CreateTutorsTable extends Migration {
             $table->integer('user_id')->unique();
             $table->string('degree');
             $table->integer('ratings')->default(0);
-            $table->decimal('rating', 1, 1)->default(0);
-            $table->decimal('hourly_rate', 3, 2);
+            $table->integer('rating')->default(0);
+            $table->integer('hourly_rate')->default(10);
             $table->text('experience')->nullable();
             $table->integer('matched_user_id')->unsigned()->nullable();
             $table->timestamps();
