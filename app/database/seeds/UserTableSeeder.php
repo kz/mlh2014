@@ -33,6 +33,7 @@ class UserTableSeeder extends Seeder {
 
             $tutor = Tutor::create(array(
                 'user_id' => $user->id,
+                'subject' => $subjects[array_rand($subjects)],
                 'degree' => $subjects[array_rand($subjects)],
                 'ratings' => $faker->numberBetween($min = 1, $max = 5),
                 'rating' => $faker->numberBetween($min = 1, $max = 5),

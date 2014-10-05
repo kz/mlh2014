@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration {
         // Creates the users table
         Schema::create('users', function ($table) {
             $table->increments('id');
-            $table->boolean('is_tutor');
+            $table->boolean('is_tutor')->default(0);
             $table->string('phone_number')->unique();
             $table->string('email_address')->unique();
             $table->string('password');

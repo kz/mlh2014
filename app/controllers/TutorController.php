@@ -18,7 +18,7 @@ class TutorController extends BaseController {
 
         foreach ($tutors as &$tutor) {
             $customer_home_address = $customer->home_address;
-            $tutor_home_address = $tutor->user()->home_address;
+            $tutor_home_address = Tutor::find($tutor->id)->user->home_address;
 
             // Find the LatLong of Customer
             $address = str_replace(' ', '+', $customer_home_address);

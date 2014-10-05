@@ -18,5 +18,5 @@ Route::group(array('prefix' => 'api'), function()
     Route::get('match/tutor/{tutor_id}/user/{user_id}', 'TutorController@matchWithUser');
     Route::post('auth/register', 'AuthController@register');
     Route::post('auth/login', 'AuthController@login');
-    Route::get('twilio/receive', 'TwilioController@receive');
+    Route::any('twilio/receive', 'TwilioController@receive');
 });

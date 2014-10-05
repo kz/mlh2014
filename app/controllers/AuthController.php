@@ -47,7 +47,7 @@ class AuthController extends BaseController {
         $user->is_tutor = $is_tutor;
         $user->save();
 
-        if ($is_tutor = 1) {
+        if ($is_tutor = true) {
             $tutor = new Tutor();
             $tutor->user_id = $user->id;
             $tutor->degree = Input::get('degree');
