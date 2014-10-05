@@ -53,6 +53,7 @@ class AuthController extends BaseController {
             $tutor->degree = Input::get('degree');
             $tutor->hourly_rate = Input::get('hourly_rate');
             $tutor->experience = Input::get('experience');
+            $tutor->subject = Input::get('subject');
             $tutor->save();
             return Response::json(array(
                     'error' => false,
