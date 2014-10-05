@@ -16,7 +16,7 @@ class TwilioController extends BaseController {
             return $response;
         }
 
-        $tutor_user = DB::table('tutors')->where('matched_user_id', '=', $caller_user->id)->first();
+        $tutor_user = DB::table('tutors')->where('id', '=', $caller_user->matched_tutor_user)->first();
         if (is_null($tutor_user)) {
             # Return and tell the user:
             # "You have not yet connected with a tutor. Please connect with a tutor and try again."

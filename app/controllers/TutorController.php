@@ -14,7 +14,7 @@ class TutorController extends BaseController {
 
     public function filterBySubject($subject, $user_id) {
         $customer = DB::table('users')->where('id', '=', $user_id)->first();
-        $tutors = DB::table('subjects')->where('subject', '=', $subject)->get();
+        $tutors = DB::table('tutors')->where('subject', '=', $subject)->get();
 
         foreach ($tutors as &$tutor) {
             $customer_home_address = $customer->home_address;
@@ -65,8 +65,8 @@ class TutorController extends BaseController {
     public function matchWithUser($tutor_id, $user_id) {
         $tutor = Tutor::find($tutor_id);
         $user = User::find($user_id);
-        $tutor->matched_user_id = $user->id;
-        $tutor->update();
+        $user->matched_tutor_id = $tutor->id;
+        $user->update();
     }
 
 } 

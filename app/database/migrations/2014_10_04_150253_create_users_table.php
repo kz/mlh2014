@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration {
             $table->string('email_address')->unique();
             $table->string('password');
             $table->text('home_address');
+            $table->integer('matched_tutor_id')->unsigned()->nullable();
             $table->timestamps();
         });
 	}
