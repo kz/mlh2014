@@ -19,4 +19,5 @@ Route::group(array('prefix' => 'api'), function()
     Route::post('auth/register', 'AuthController@register');
     Route::post('auth/login', 'AuthController@login');
     Route::any('twilio/receive', 'TwilioController@receive');
+    Route::any('twilio/receive_test', 'TwilioController@receiveTest');
 });
