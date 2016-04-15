@@ -1,6 +1,8 @@
 ## Tutor4U - An MLH Launch Hack Creation
 
-Tutor4U is Tinder for finding Tutors. This repo contains the back-end which was hastily created during MLH Launch Hack 2014.
+*Disclaimer: This repository contains code developed during a hackathon and does not represent the quality of code produced in a professional environment.*
+
+Tutor4U is Tinder for finding Tutors. This repo contains the back-end which was hastily created during MLH Launch Hack (August) 2014.
 
 The front-end is an Android app which lets students find a tutor without revealing their personal information. This is achieved through Twilio integration via TwiML in the PHP backend: as the customer accepts a tutor (instead of dismissing one), they will be prompted to call a Twilio number. The customer is automatically bound to the Twilio number so that when the customer calls the number, Tutor4U will dial the tutor so both parties can communicate without revealing their phone numbers.
 
